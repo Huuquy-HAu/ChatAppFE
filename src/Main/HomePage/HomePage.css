@@ -38,6 +38,9 @@
 .menu-top{
     height: 50%;
 }
+.menu-top li:hover{
+    cursor: pointer;
+}
 .menu-bot{
     height: 50%;
  display: flex;
