@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.chatMain{
+    background-color: red;
+    height: 100vh;
+    
+}
+.Profile{
+    background-color: yellow;
+    height: 100vh;
+}
+.infor{
+    background-color: pink;
+    height: 100vh;
+   
+}
+.homePage{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+.menu{
+    height: 100vh;
+    width: 70px;
+    padding: 16px 12px;
+  border-right: 0.2px solid rgba(101, 103, 107, 0.5);;
+  background-color: #ffffff;
+}
+.homePage-right{
+    width: 95%;
+    display: grid;
+    grid-template-columns : 30% auto 20%
+}
+.menu-top{
+    height: 50%;
+}
+.menu-bot{
+    height: 50%;
+ display: flex;
+ flex-direction: row;
+ align-items: end;
+}
+.menu-bot img{
+    width: 100%;
+    border-radius: 50%;
+}
+.menu li {
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    border-radius: 5%;
+   margin-top: 5px ;
+  display: flex;
+   justify-content: center;
+   flex-direction: column;
+  border-radius: 10%;
+}
+.menu i {
+    width: 24px;
+    height: 24px;
+   font-size: 20px;
+  
+}
+.menu a{   
+    color: black;
+}
+.menu li:hover{
+    background-color: #f5f5f5;
+}
+.boxChat{
+    height: 100vh;
+    padding: 12px 16px;
+   
+}
+.boxChat-top{
+    display: flex;
+    justify-content: space-between;
+   align-items: center;
+   margin-bottom: 20px;
+}
+.boxChat-top div{
+    
+   padding: 8px 16px;
+}
+.boxChat i{
+    font-size: 22px;
+}
+.boxChat h1{
+    width: 70%;
+ /* padding-top: 7px; */
+ align-items: center;
+ margin: 0;
+}
+.boxChat-mid-conten{
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    /* border: 1px solid black; */
+    padding: 2px ;
+    margin-bottom: 20px;
+}
+.boxChat-mid-conten input{
+    width: 90%;
+    border: none;
+    outline: none;
+    padding: 7px 6px 9px;
+    background-color: #f5f5f5;
+}
+.boxChat-mid-conten i{
+    align-items: center;
+    font-size: 15px;
+}
+.boxChat-bot{
+    overflow: auto;
+   height: 520px;
+}
+.boxChat-bot-item{
+    display: flex;
+    /* padding: 10px; */
+}
+.boxChat-bot-item-img{
+   width: 20%;
+    
+    margin-right: 10px;
+}
+.boxChat-bot-item-img img{
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.boxChat-bot-item-conten{
+    width: 75%;
+}
+.boxChat-bot-item-conten p{
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; 
+}

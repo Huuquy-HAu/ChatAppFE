@@ -2,7 +2,7 @@ import React from 'react'
 
 function Infor() {
   return (
-    <div>Infor</div>
+    <div className='infor'>Infor</div>
   )
 }
 
