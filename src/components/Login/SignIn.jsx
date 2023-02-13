@@ -27,12 +27,6 @@ function SignIn() {
     draggable: true,
     theme: "dark",
   };
-  // useEffect(() => {
-  //   if (localStorage.getItem("chat-app-current-user")) {
-  //     navigate("/");
-  //   }
-  //   handleSubmit();
-  // }, []);
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
