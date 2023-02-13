@@ -3,14 +3,23 @@ import "./SignIn.css";
 // import axios from "axios";
 import styled from "styled-components";
 import Logo from "../../assets/logo.svg";
+import loader from "../../assets/loader.gif";
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { postAPI } from "../../config/api";
 
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 function SignIn() {
   const navigate = useNavigate();
   const [values, setValues] = useState({ gmail: "", password: "" });
+  const [loading, setLoading] = useState(false);
   const toastOptions = {
     position: "bottom-right",
     autoClose: 2000,
@@ -22,6 +31,7 @@ function SignIn() {
   //   if (localStorage.getItem("chat-app-current-user")) {
   //     navigate("/");
   //   }
+  //   handleSubmit();
   // }, []);
 
   const handleChange = (event) => {
@@ -30,7 +40,7 @@ function SignIn() {
 
   const validateForm = () => {
     const { gmail, password } = values;
-    console.log(gmail, password);
+    // console.log(gmail, password);
     if (gmail === "") {
       return toast.error("Khong de trong gmail", toastOptions);
     } else if (password === "") {
@@ -40,29 +50,36 @@ function SignIn() {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (validateForm()) {
-      const { gmail, password } = values;
-      const data = await postAPI("/users/sign-in", {
-        gmail,
-        password,
-      });
-      console.log(data);
-      if (data.status !== 200) {
-        toast.error(data.msg, toastOptions);
-      }
-      if (data.status === 200) {
-        localStorage.setItem(
-          "chat-app-current-user",
-          JSON.stringify(data.user)
+    try {
+      event.preventDefault();
+      if (validateForm()) {
+        const { gmail, password } = values;
+        setLoading(true);
+        const data = await postAPI(
+          "/users/sign-in",
+          {
+            gmail,
+            password,
+          },
+          { withCredentials: true }
         );
-        navigate("/");
+        console.log(58, data);
+        toast.success("log-in success", toastOptions);
+
+        localStorage.setItem("chat", JSON.stringify(data.data));
+        setCookie("chat-app", data.data.token, 30);
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
       }
+    } catch (error) {
+      return toast.error("wrong gmail, password", toastOptions);
     }
   };
   return (
     <>
       <FormContainer>
+        {loading && loader}
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
             <img src={Logo} alt="logo" />
