@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {PlusCircleOutlined } from "@ant-design/icons"
 function ChatMain() {
+  const [show,setShow] = useState(false)
+  function showInfor (){
+    let taget = document.querySelector(".homePage-right")
+    let target =document.querySelector(".infor")
+    if(show === false){
+      taget.setAttribute("style"," grid-template-columns : 30% auto 20%")
+      target.setAttribute("style"," display: block;")
+      setShow(true)
+    }
+    if(show === true){
+      taget.setAttribute("style"," grid-template-columns : 30% auto ")
+      target.setAttribute("style"," display: none;")
+      setShow(false)
+    }
+  }
   return (
     <div className='chatMain'>
       <div className='chatMain-top'>
@@ -8,7 +23,7 @@ function ChatMain() {
            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTavONlrqeMyP2frM69zYo8jHXpMhJhoW-WOw&usqp=CAU" alt="" />
          <div className='chatMain-top-left-text'><span>Name</span></div>
         </div>
-        <div className='chatMain-top-right'>
+        <div className='chatMain-top-right' onClick={showInfor}>
          <i class="fa-solid fa-ellipsis"></i>
         </div>
       </div>

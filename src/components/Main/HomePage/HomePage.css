@@ -16,6 +16,7 @@ border-right: 0.2px solid rgba(101, 103, 107, 0.5);
 .infor{
     /* background-color: pink; */
     height: 100vh;
+    display: none;
    
 }
 .homePage{
@@ -33,7 +34,7 @@ border-right: 0.2px solid rgba(101, 103, 107, 0.5);
 .homePage-right{
     width: 95%;
     display: grid;
-    grid-template-columns : 30% auto 20%
+    grid-template-columns : 30% auto ;
 }
 .menu-top{
     height: 50%;
