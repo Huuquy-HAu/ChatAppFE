@@ -5,16 +5,15 @@
 }
 
 .chatMain{
-    background-color: red;
     height: 100vh;
-    
+    position: relative;
 }
 .Profile{
     background-color: yellow;
     height: 100vh;
 }
 .infor{
-    background-color: pink;
+    /* background-color: pink; */
     height: 100vh;
    
 }
@@ -77,7 +76,7 @@
 .boxChat{
     height: 100vh;
     padding: 12px 16px;
-   
+    border-right: 0.2px solid rgba(101, 103, 107, 0.5);;
 }
 .boxChat-top{
     display: flex;
@@ -149,4 +148,120 @@
 .boxChat-bot-item:hover{
     cursor: pointer;
     background-color:#f5f5f5;
+}
+.chatMain-top{
+    display: flex;
+    justify-content: space-between;
+    height:68px ;
+    padding: 10px 12px;
+     position: static;
+   top: 0;
+   z-index: 100;
+}
+.chatMain-top-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+.chatMain-top-left img{
+   height: 36px;
+    width: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.chatMain-top-left-text{
+   padding: 6px 6px 6px 2px;
+}
+.chatMain-top-right i{
+    font-size: 20px;
+}
+.chatMain-top-right{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+.chatMain-main{
+    height: 540px;
+   overflow: auto;
+}
+.chatMain-bot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 6px 8px;
+}
+.chatMain-bot-icon{
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatMain-bot-iput input{
+    width: 95%;
+    padding: 8px 12px;
+    background-color: #f3f3f5;
+    outline: unset;
+    border: none;
+    border-radius: 2001em;
+}
+.chatMain-bot-iput{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f5;
+    border-radius: 2001em;
+    border: 1px solid black;
+    position: static;
+    bottom: 0;
+}
+.chatMain-bot i{
+   padding: 2px 4px;
+    font-size: 25px;
+   color: #0084ff;
+}
+.infor-top{
+    width: 100%;
+    text-align: center;
+ padding: 16px 0 12px;
+}
+.infor-top-img{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin: auto;
+}
+.infor-top-img img{
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.infor-top h3{
+    padding: 0 16px;
+    margin-top: 10px;
+}
+.infor-bot{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.infor-bot-menu{
+    width: 30%;
+}
+.infor-bot-menu-list{
+    
+    text-align: center;
+    align-items: center;
+}
+.infor-bot-menu-list p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+   width: 100%;
+   white-space: nowrap; 
 }
