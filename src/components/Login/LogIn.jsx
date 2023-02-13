@@ -11,10 +11,10 @@ function LogIn() {
     try {
       const data = await postAPI("/users/sign-in", { gmail, password });
       console.log(11, data);
-      if (data.status === 200) {
-        nav("/");
-      }
+
+      nav("/");
     } catch (error) {
+      // alert(error.reponse.data);
       console.log(error);
     }
   };
