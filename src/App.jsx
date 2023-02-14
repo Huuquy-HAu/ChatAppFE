@@ -9,7 +9,7 @@ import Profile from "./components/Profile/Profile";
 import BoxChat from "./components/Main/Oulet/BoxChat";
 import Active from "./components/Main/Oulet/Active";
 import Spam from "./components/Main/Oulet/Spam";
-import Home from "./components/Home/Home";
+import Home from "./components/Main/HomePage/HomePage";
 
 function App() {
   return (
