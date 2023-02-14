@@ -9,16 +9,17 @@ import Profile from "./components/Profile/Profile";
 import BoxChat from "./components/Main/Oulet/BoxChat";
 import Active from "./components/Main/Oulet/Active";
 import Spam from "./components/Main/Oulet/Spam";
-import Home from "./components/Home/Home";
+// import Home from "./components/Main/HomePage/HomePage";
+import HomePage from "./components/Main/HomePage/HomePage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/admin" element={<Admin />} />
-        <Route path="/sign-in" element={<SignIn />}></Route>
+        <Route path="/" element={<SignIn />}></Route>
         <Route path="/sign-up" element={<SignUp />}></Route>
-        <Route path="/" element={<Home />}>
+        <Route path="/m" element={<HomePage />}>
           <Route index element={<BoxChat></BoxChat>}></Route>
           <Route path="/active" element={<Active></Active>}></Route>
           <Route path="/spam" element={<Spam></Spam>}></Route>
