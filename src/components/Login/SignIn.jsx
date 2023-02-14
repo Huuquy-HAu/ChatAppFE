@@ -63,7 +63,7 @@ function SignIn() {
         localStorage.setItem("chat", JSON.stringify(data.data));
         setCookie("chat-app", data.data.token, 30);
         setTimeout(() => {
-          navigate("/");
+          navigate("/m");
         }, 2000);
       }
     } catch (error) {

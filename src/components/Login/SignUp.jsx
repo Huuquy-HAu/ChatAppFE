@@ -24,11 +24,11 @@ function SignUp() {
     confirmPassword: "",
   });
 
-  useEffect(() => {
-    if (localStorage.getItem("chat")) {
-      navigate("/");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("chat")) {
+  //     navigate("/");
+  //   }
+  // }, []);
 
   const handleChange = (event) => {
     // console.log(34, event.target.name, event.target.value);
@@ -60,7 +60,7 @@ function SignUp() {
         );
         toast.success("create success", toastOptions);
         setTimeout(() => {
-          navigate("/sign-in");
+          navigate("/");
         }, 2000);
       }
     } catch (error) {
