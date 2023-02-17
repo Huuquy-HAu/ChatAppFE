@@ -13,7 +13,7 @@ function Menu() {
         </div>
         <div className='menu-bot'>
         <ul>
-            <li ><a ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2NhI8N6r4uMLZQu-cgx6ST0kmx3yyYT1WCQ&usqp=CAU" alt="" /></a></li>
+            <li ><a href='/profile'><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2NhI8N6r4uMLZQu-cgx6ST0kmx3yyYT1WCQ&usqp=CAU" alt="" /></a></li>
             <li onClick={()=>{nav("/")}}><a ><i class="fa-solid fa-right-from-bracket"></i></a></li>
             
           </ul>
