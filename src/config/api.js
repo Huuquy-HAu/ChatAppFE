@@ -21,8 +21,8 @@ export const getAPI = function (url) {
   return instance.get(url, { headers: { Authorization: cookie } });
 };
 export const postAPI = function (url, data) {
-  // let cookie = getCookie("chat-app");
-  return instance.post(url, data);
+  let cookie = getCookie("chat-app");
+  return instance.post(url, data, { headers: { Authorization: cookie } });
 };
 export const patchAPI = function (url, data) {
   let cookie = getCookie("chat-app");

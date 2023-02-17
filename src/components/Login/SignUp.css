@@ -1,0 +1,79 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+.container-sign-up{
+    /* height: 100vh;
+    width: 100vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    background-color: #131324;
+}
+.container-sign-up .brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+.container-sign-up  img {
+      height: 5rem;
+    }
+.container-sign-up h1 {
+        color: white;
+        text-transform: uppercase;
+      }
+  
+.container-sign-up  .content-sign-up {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #00000076;
+    border-radius: 2rem;
+    padding: 5rem;
+  }
+  .container-sign-up input {
+    background-color: transparent;
+    padding: 1rem;
+    border: 0.1rem solid #4e0eff;
+    border-radius: 0.4rem;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+  }
+  .container-sign-up  button {
+    background-color: #4e0eff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    
+  }
+  .container-sign-up  span {
+    color: white;
+    text-transform: uppercase;
+  }
+  .container-sign-up    a {
+      color: #4e0eff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+.input-password{
+  position: relative;
+}
+  i{
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    
+  }
