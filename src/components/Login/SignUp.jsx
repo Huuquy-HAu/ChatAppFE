@@ -54,7 +54,7 @@ function SignUp() {
         );
         toast.success("create success", toastOptions);
         setTimeout(() => {
-          navigate("/sign-in");
+          navigate("/");
         }, 2000);
       }
     } catch (error) {

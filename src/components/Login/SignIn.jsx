@@ -60,7 +60,7 @@ function SignIn() {
         localStorage.setItem("chat", JSON.stringify(data.data));
         setCookie("chat-app", data.data.token, 30);
         setTimeout(() => {
-          navigate("/");
+          navigate("/m");
         }, 2000);
       }
     } catch (error) {
@@ -81,7 +81,7 @@ function SignIn() {
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
             <img src={Logo} alt="logo" />
-            <h1>Chat App B3</h1>
+            <h1 id="h1-Sigin">Chat App B3</h1>
           </div>
           <input
             type="text"
