@@ -21,8 +21,8 @@ function App() {
         <Route path="/sign-up" element={<SignUp />}></Route>
         <Route path="/m" element={<HomePage />}>
           <Route index element={<BoxChat></BoxChat>}></Route>
-          <Route path="/active" element={<Active></Active>}></Route>
-          <Route path="/spam" element={<Spam></Spam>}></Route>
+          <Route path="/m/active" element={<Active></Active>}></Route>
+          <Route path="/m/spam" element={<Spam></Spam>}></Route>
         </Route>
         <Route element={<Profile></Profile>} path="/profile"></Route>
       </Routes>
