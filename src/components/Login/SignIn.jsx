@@ -57,7 +57,7 @@ function SignIn() {
         console.log(58, data);
         toast.success("log-in success", toastOptions);
 
-        localStorage.setItem("chat", JSON.stringify(data.data));
+        localStorage.setItem("chat-app", JSON.stringify(data.data));
         setCookie("chat-app", data.data.token, 30);
         setTimeout(() => {
           navigate("/");

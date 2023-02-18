@@ -34,12 +34,12 @@ function SignUp() {
       const mailFormat = /^([a-zA-Z0-9_\.\-])+\@gmail.com/;
       if (!gmail || !userName || !password || !confirmPassword) {
         toast.error("Không để trống thông tin !", toastOptions);
-      } else if (password !== confirmPassword) {
-        toast.error("Mật khẩu không khớp nhau !", toastOptions);
-      } else if (!mailFormat.test(gmail)) {
-        toast.error("Sai định dạng gmail !", toastOptions);
       } else if (userName.length < 2) {
         toast.error("Tên người dùng phải 2 ký tự trở lên !", toastOptions);
+      } else if (!mailFormat.test(gmail)) {
+        toast.error("Sai định dạng gmail !", toastOptions);
+      } else if (password !== confirmPassword) {
+        toast.error("Mật khẩu không khớp nhau !", toastOptions);
       } else if (password.length < 6) {
         toast.error("Mật khẩu ít nhất phải  6 ký tự !", toastOptions);
       } else {

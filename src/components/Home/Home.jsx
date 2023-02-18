@@ -16,7 +16,7 @@ function Home() {
     theme: "dark",
   };
 
-  const local = localStorage.getItem("chat");
+  const local = localStorage.getItem("chat-app");
   const parse = JSON.parse(local);
   useEffect(() => {
     if (!local) {
@@ -28,7 +28,7 @@ function Home() {
 
   const logOut = () => {
     removeCookie("chat-app");
-    localStorage.removeItem("chat");
+    localStorage.removeItem("chat-app");
     navigate("/sign-in");
   };
   return (
