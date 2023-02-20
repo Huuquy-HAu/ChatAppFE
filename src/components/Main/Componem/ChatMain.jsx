@@ -1,11 +1,10 @@
-import React, { useState,useRef  } from 'react'
+import React, { useState,useRef ,useEffect } from 'react'
 import {PlusCircleOutlined } from "@ant-design/icons"
 import Picker from '@emoji-mart/react'
 import data from '@emoji-mart/data'
 function ChatMain() {
   const [show,setShow] = useState(false)
   const [controlerEM,setControlerEM] = useState(false)
-  const [chosenEmoji, setChosenEmoji] = useState(null);
   const dataCHat = [1,2,3,4,5]
   const [dataClone,setDataClone] = useState(dataCHat)
   const inputElement = useRef();
@@ -13,12 +12,13 @@ function ChatMain() {
     setControlerEM(true)
   }
   function clickEmoj (even){
-    setDataClone([...dataClone,even.native])
+    // setDataClone([...dataClone,even.native])
+    inputElement.current.value = inputElement.current.value + even.native
     setControlerEM(false)
+    inputElement.current.focus()
   }
   function updateScroll (){
     var element = document.querySelector(".chatMain-main");
-    console.log(element.scrollHeight );
     element.scrollTop = element.scrollHeight;
   }
   function chat (e){
@@ -42,6 +42,10 @@ function ChatMain() {
       setShow(false)
     }
   }
+  useEffect(() => {
+    updateScroll ()
+  }, [dataClone])
+  
   return (
     <div className='chatMain' >
       <div className='chatMain-top'>
@@ -64,7 +68,7 @@ function ChatMain() {
            <div><PlusCircleOutlined /></div>
         </div>
         <div className='chatMain-bot-iput'>
-          <input type="text" placeholder='Aa' onKeyUp={chat} ref={inputElement} onChange={updateScroll}/>
+          <input type="text" placeholder='Aa' onKeyUp={chat} ref={inputElement} />
           <div className='chatMain-bot-iput-emoj'>
               <i className="fa-regular fa-face-smile-beam" onClick={showEM}></i>
               {controlerEM ? <div className='emoj'><Picker  data={data} onEmojiSelect = {clickEmoj}/></div>:""}
